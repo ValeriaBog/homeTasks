@@ -2,6 +2,7 @@
 }
 
 .inputAndButtonContainer {
+    display: flex;
 }
 
 .error {
@@ -9,26 +10,44 @@
 }
 
 .input {
+    border: 1px solid blue;
 }
 
 .input:focus {
-
+    border: 1px solid blue;
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
 }
 
 .errorInput{
     border: 1px solid red;
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
 }
 
 .button {
+    margin-left: 10px;
+    padding: 8px 20px;
+    color: #FFFFFF;
+    background: #0066CC;
+    border-radius: 15px;
+    border: none;
+
+
 }
 
 .button:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
 }
 
 .button:active {
+    color: white;
+    background-color: #0059b3;
 }
 
 .button:disabled {
+    opacity: 0.5;
 }
 
 .text {

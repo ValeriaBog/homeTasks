@@ -25,7 +25,8 @@ const Greeting: React.FC<GreetingPropsType> = (
         lastUserName,
     } // деструктуризация пропсов
 ) => {
-    const inputClass = error=='Ошибка! Введите имя!'?s.errorInput: undefined // need to fix with (?:)
+    const inputClass = error==='Ошибка! Введите имя!'?s.errorInput:s.input // need to fix with (?:)
+
 
     return (
         <div id={'hw3-form'} className={s.greetingForm}>
@@ -45,10 +46,13 @@ const Greeting: React.FC<GreetingPropsType> = (
                         className={inputClass}
                         onKeyDown={onEnter}
                         onBlur={onBlur}
+
                     />
                     <div id={'hw3-error'} className={s.error}>
                         {error}
                     </div>
+
+
                 </div>
 
                 <button
@@ -57,7 +61,7 @@ const Greeting: React.FC<GreetingPropsType> = (
                     className={s.button}
                     disabled={!name.trim()}
                 >
-                    add
+                    Add
                 </button>
             </div>
 
