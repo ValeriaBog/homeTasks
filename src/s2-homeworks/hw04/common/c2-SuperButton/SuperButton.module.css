@@ -1,35 +1,53 @@
 .button {
+    border-radius: 5px;
+    padding: 5px 20px;
+    text-align: center;
 }
 
 .disabled {
+    opacity: 0.5;
+    color: black;
+    background: #0059b3;
 }
 
 .secondary {
+    border: 1px solid blue;
+    color: #0059b3;
 }
 
 .default {
+    background: blue;
+    color: #FFFFFF;
 }
 
 .red {
+    background: #cc0000;
+    color: #FFFFFF;
 }
 
 .default:hover {
+    background: lightsteelblue;
 }
 
 .red:hover {
+    background: firebrick;
 }
 
 .secondary:hover {
+    background: lightblue;
 }
 
 
 .default:active {
+    background: darkblue;
 }
 
 .secondary:active {
+    background: cadetblue;
 }
 
 .red:active {
+    background: darkred;
 }
 
 .button:disabled {
