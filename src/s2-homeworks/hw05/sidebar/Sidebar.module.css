@@ -1,25 +1,51 @@
 .sidebar {
+    display: none;
+    width: 350px;
+    height: 100%;
+    background: #FFFFFF;
+    transition: all .3s ease-in-out;
+
 }
 
 .sidebar.open {
+    display: block;
+    position: fixed;
+    transition: all .3s ease-in-out;
 }
 
 .background {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .nav {
+    display: flex;
+    flex-direction: column;
 }
 
 .nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 10px 0;
+    text-align: center;
 }
 
 .nav a:hover {
+    text-decoration-line: underline;
+    color: #0059b3;
 }
 
 .nav a.active {
+    color: #0066CC;
 }
+
 .close {
+    border: none;
+    background: #FFFFFF;
 }
 
 .close img {
+padding-left: 325px;
 }
+
