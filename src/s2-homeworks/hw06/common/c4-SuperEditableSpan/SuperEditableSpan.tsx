@@ -38,28 +38,28 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
 ) => {
     const [editMode, setEditMode] = useState<boolean>(false)
     const {children, onDoubleClick, className, defaultText, ...restSpanProps} =
-    spanProps || {}
+    spanProps || {} // здесь деструктуризация spanProps.Ставим на случай {} если вдруг не окажется свойств таких у spanProps, иначе выскочит ошибка без этого
 
     const onEnterCallback = () => {
         // выключить editMode при нажатии Enter // делают студенты
-
+        setEditMode(false)
         onEnter?.()
     }
     const onBlurCallback = (e: React.FocusEvent<HTMLInputElement>) => {
         // выключить editMode при нажатии за пределами инпута // делают студенты
-
+        setEditMode(false)
         onBlur?.(e)
     }
     const onDoubleClickCallBack = (
         e: React.MouseEvent<HTMLSpanElement, MouseEvent>
     ) => {
         // включить editMode при двойном клике // делают студенты
-
+        setEditMode(true)
         onDoubleClick?.(e)
     }
 
     const spanClassName = s.span
-        + (className ? ' ' + className : '')
+
 
     return (
         <>
@@ -85,7 +85,8 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                     >
                         {/*если нет захардкодженного текста для спана, то значение инпута*/}
 
-                        {children || restProps.value || defaultText}
+                        {children || restProps.value || defaultText}{/*если передается children, то его,
+                         если передается restProps.value, то его и тд  */}
                     </span>
                 </div>
             )}

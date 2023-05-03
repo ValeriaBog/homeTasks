@@ -1,10 +1,14 @@
 .spanBlock {
+
 }
 
 .span {
+    color: cornflowerblue;
+    font-size: larger;
 }
 
 .input {
+    border: red
 }
 
 .pen {
