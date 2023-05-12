@@ -1,15 +1,35 @@
 .radio {
+    appearance: none; /*снимает стили которые по умолчанию*/
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: cadetblue;
+    outline: none;
+    transition: all .5s ease-in-out;
+}
+.radio:hover{
+    border: 2px solid hotpink;
+    transition: all .5s ease-in-out;
+}
+.radio:checked{
+    background: hotpink;
+    transition: all .5s ease-in-out;
 }
 
-.radio::before {
-}
-
-
-.radio:checked::before {
+.span{
+    padding-left: 10px;
 }
 
 .label {
+    padding-bottom: 10px;
+    cursor: pointer;
 }
 
 .options {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+
 }
+

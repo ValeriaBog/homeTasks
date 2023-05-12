@@ -1,9 +1,20 @@
 .select {
+    appearance: none; /*снимает стили которые по умолчанию*/
+    padding: 5px;
+    padding-right: 30px;
+    cursor: pointer;
+    background: url('https://cdn-icons-png.flaticon.com/512/7613/7613775.png') no-repeat right; /*в svg можно поменять цвет там где в ссылке поле fill*/
+    background-position-x: calc(100% - 8px);
+    background-size: 1.25em auto, 100%;
+    border: 2px solid royalblue;
+    border-radius: 4px;
 }
 
 .select:focus {
+    outline: none;
+
 }
 
-
 .option:hover {
+    background: cadetblue;
 }

@@ -3,8 +3,11 @@
 }
 
 .span {
+    display: inline-block;
+    height: 23px;
     color: cornflowerblue;
     font-size: larger;
+    cursor: pointer;
 }
 
 .input {

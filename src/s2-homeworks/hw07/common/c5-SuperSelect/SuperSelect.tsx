@@ -5,6 +5,7 @@ import React, {
 } from 'react'
 import s from './SuperSelect.module.css'
 
+
 type DefaultSelectPropsType = DetailedHTMLProps<
     SelectHTMLAttributes<HTMLSelectElement>,
     HTMLSelectElement
@@ -22,7 +23,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
     onChangeOption,
     ...restProps
 }) => {
-    const mappedOptions: any[] = options
+    const mappedOptions: any[] = options // по умолчанию будет выбран первый в списке option
         ? options.map((o) => (
               <option
                   id={'hw7-option-' + o.id}
@@ -36,10 +37,17 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         : [] // map options with key
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
+
+            onChangeOption &&  onChangeOption(e.target.value)
+
+
         // делают студенты
     }
 
     const finalSelectClassName = s.select + (className ? ' ' + className : '')
+
+    {/* {...restProps} - здесь содержится value из useState.Чтобы отобразить контролируемое поле выбора,
+     передаем value сюда.те что в value, то и отобразится выбранным*/}
 
     return (
         <select
