@@ -1,23 +1,43 @@
 .item {
+
+}
+.item:hover {
+
+
 }
 
 .item:last-of-type {
 }
 
 .users {
+    width: 50%;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
 }
 
 .buttonsContainer {
+
 }
 
 .container {
 }
 
 .thead {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
+
 }
 
 .nameCol {
+    border-bottom: 1px solid #dddddd;
+    padding: 5px;
+
 }
 
 .ageCol {
+    border-bottom: 1px solid #dddddd;
+    padding: 5px;
 }
