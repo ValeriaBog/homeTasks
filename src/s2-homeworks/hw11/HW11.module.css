@@ -2,7 +2,14 @@
 }
 
 .wrapper {
+    display: flex;
+
+
+
 }
 
 .number {
+    font-weight: bolder;
+    font-size: larger;
+    margin-left: 20px;
 }
