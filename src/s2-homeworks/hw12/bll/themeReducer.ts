@@ -13,7 +13,7 @@ debugger
     switch (action.type) {
         // дописать
         case "SET_THEME_ID":
-            return {...state, themeId: action.id}
+            return {...state, themeId: Number(action.id)}
 
         default:
             return state
@@ -21,7 +21,7 @@ debugger
 }
 type changeThemeIdType ={
     type: 'SET_THEME_ID',
-    id: number
+    id: string
 }
 
-export const changeThemeId = (id: number): changeThemeIdType => ({type: 'SET_THEME_ID', id}) // fix any
+export const changeThemeId = (id: string): changeThemeIdType => ({type: 'SET_THEME_ID', id}) // fix any
