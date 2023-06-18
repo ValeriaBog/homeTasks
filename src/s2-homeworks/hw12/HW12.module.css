@@ -4,8 +4,8 @@
 }
 
 [data-theme='2'] {
-    --color: #000000;
-    --background: #DDEEFF;
+    --color: #000000; /*объявили переменную --color*/
+    --background: #DDEEFF;/*объявили переменную ----background*/
 }
 
 [data-theme='3'] {
@@ -14,8 +14,8 @@
 }
 
 html {
-    background-color: var(--background);
-    color: var(--color);
+    background-color: var(--background); /*для html будет использовать переменная --background из записей выше*/
+    color: var(--color);/*здесь будет использовать переменная --background из записей выше*/
 }
 
 .select {
