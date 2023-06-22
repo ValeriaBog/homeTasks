@@ -26,14 +26,13 @@ const HW12 = () => {
     debugger
     const dispatch = useDispatch()
     const change = (id: string) => { // дописать функцию
-debugger
+
         dispatch(changeThemeId(id))
     }
 
     useEffect(() => {
 
         document.documentElement.dataset.theme = themeId + ''
-        debugger
     }, [themeId])
 
 // const cn =
