@@ -47,43 +47,43 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
+
     const sendQuery = (params: any) => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
                 // делает студент
-
+                setTechs(res!.data.techs)
                 // сохранить пришедшие данные
-
+                setTotalCount(res!.data.totalCount)
+                setLoading(false)
                 //
             })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
+        setPage(newPage)
+        setCount(newCount)
 
-        // setPage(
-        // setCount(
+        sendQuery({page, count})
+        setSearchParams({page: page.toString(), count: count.toString()})
 
-        // sendQuery(
-        // setSearchParams(
 
-        //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        // sendQuery(
-        // setSearchParams(
-
-        //
+        sendQuery({page, count})
+        setSearchParams({page: page.toString(), count: count.toString()})
     }
 
     useEffect(() => {
+        debugger
         const params = Object.fromEntries(searchParams)
         sendQuery({page: params.page, count: params.count})
         setPage(+params.page || 1)
@@ -118,12 +118,12 @@ const HW15 = () => {
 
                 <div className={s.rowHeader}>
                     <div className={s.techHeader}>
-                        tech
+                        Tech
                         <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
                     </div>
 
                     <div className={s.developerHeader}>
-                        developer
+                        Developer
                         <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
                     </div>
                 </div>
